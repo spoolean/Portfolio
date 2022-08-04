@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP", "ASP\ASP.csproj", "{ADCEA201-E60A-4C24-8265-7A921FA9FD66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A911319A-2056-4C84-AE24-FF133308DBA1} = {A911319A-2056-4C84-AE24-FF133308DBA1}
+	EndProjectSection
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vue", "vue\vue.esproj", "{A911319A-2056-4C84-AE24-FF133308DBA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,12 @@ Global
 		{ADCEA201-E60A-4C24-8265-7A921FA9FD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADCEA201-E60A-4C24-8265-7A921FA9FD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADCEA201-E60A-4C24-8265-7A921FA9FD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A911319A-2056-4C84-AE24-FF133308DBA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A911319A-2056-4C84-AE24-FF133308DBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A911319A-2056-4C84-AE24-FF133308DBA1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A911319A-2056-4C84-AE24-FF133308DBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A911319A-2056-4C84-AE24-FF133308DBA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A911319A-2056-4C84-AE24-FF133308DBA1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

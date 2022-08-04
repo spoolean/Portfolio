@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,11 +18,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Micro APIs 
+// Endpoint to return projects.json
+app.MapGet("/Projects", () => {
+    return JsonConvert.DeserializeObject(File.ReadAllText($"{Directory.GetCurrentDirectory()}/Files/projects.json"));
+});
 
+// Front end Configurations
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseDefaultFiles();
-
 app.UseRouting();
 
 app.UseAuthorization();

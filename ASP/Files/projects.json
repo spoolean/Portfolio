@@ -1,0 +1,50 @@
+{
+  "projects": {
+    "project1": {
+      "name": "project1",
+      "description": "project1 description",
+      "url": "http://project1.com",
+      "image": "http://project1.com/image.png",
+      "tags": [
+        "tag1",
+        "tag2"
+      ],
+      "technologies": [
+        "tech1",
+        "tech2"
+      ],
+      "categories": [
+        "category1",
+        "category2"
+      ],
+      "date": "2014-01-01",
+      "status": "active",
+      "type": "project",
+      "order": 1,
+      "content": "project1 content"
+    },
+    "project2": {
+      "name": "project2",
+      "description": "project2 description",
+      "url": "http://project2.com",
+      "image": "http://project2.com/image.png",
+      "tags": [
+        "tag1",
+        "tag2"
+      ],
+      "technologies": [
+        "tech1",
+        "tech2"
+      ],
+      "categories": [
+        "category1",
+        "category2"
+      ],
+      "date": "2014-01-01",
+      "status": "active",
+      "type": "project",
+      "order": 2,
+      "content": "project2 content"
+    }
+  }
+}
