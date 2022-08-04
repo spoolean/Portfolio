@@ -1,4 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.css'
 import { createApp } from 'vue'
+import { createStore } from 'vuex'
 import App from './App.vue'
+import Store from './Store.js'
 
-createApp(App).mount('#app')
+const store = createStore(Store);
+
+createApp(App)
+    .use(store)
+    .mount('#app');

@@ -1,39 +1,61 @@
 <script lang="js">
-    export default {
-        //data() {
-        //    return {
-        //        loading: false,
-        //        post: null
-        //    };
-        //},
-        //created() {
-        //    // fetch the data when the view is created and the data is
-        //    // already being observed
-        //    this.fetchData();
-        //},
-        //watch: {
-        //    // call again the method if the route changes
-        //    '$route': 'fetchData'
-        //},
-        //methods: {
-        //    fetchData() {
-        //        this.post = null;
-        //        this.loading = true;
+    import Projects from './ProjectsCard.vue'
 
-        //        fetch('weatherforecast')
-        //            .then(r => r.json())
-        //            .then(json => {
-        //                this.post = json;
-        //                this.loading = false;
-        //                return;
-        //            });
-        //    }
-        //},
+    export default {
+        components: {
+            Projects
+        },
+        data() {
+            return {
+                width: document.documentElement.clientWidth,
+                widthSmall : false,
+                loading: false,
+                projects: null
+            };
+        },
+        created() {
+            this.fetchData();
+        },
+        mounted() {
+            window.addEventListener('resize', () => { this.width = document.documentElement.clientWidth; });
+        },
+        watch: {
+            width() {
+                if (this.width <= 579) {
+                    this.widthSmall = true;
+                }
+                else {
+                    this.widthSmall = false;
+                }
+            }
+        },
+        methods: {
+            fetchData() {
+                this.post = null;
+                this.loading = true;
+
+                fetch('weatherforecast')
+                    .then(r => r.json())
+                    .then(json => {
+                        this.post = json;
+                        this.loading = false;
+                        return;
+                    });
+            }
+        },
     }
 </script>
 
 <template>
-    <div>
-        <h1>Hello World</h1>
+    <div class="container">
+        <h1>About</h1>
+        <h1>Projects</h1>
+        <div v-if="widthSmall" class="row g-3">
+            <p>This is small one</p>
+        </div>
+        <!-- If small screen, then projects in carousel for easier viewing -->
+        <div v-else>
+            <Projects />
+        </div>
     </div>
 </template>

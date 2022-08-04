@@ -21,7 +21,7 @@ if (app.Environment.IsDevelopment())
 // Micro APIs 
 // Endpoint to return projects.json
 app.MapGet("/Projects", () => {
-    return JsonConvert.DeserializeObject(File.ReadAllText($"{Directory.GetCurrentDirectory()}/Files/projects.json"));
+    return File.ReadAllText($"{Directory.GetCurrentDirectory()}/Files/projects.json");
 });
 
 // Front end Configurations

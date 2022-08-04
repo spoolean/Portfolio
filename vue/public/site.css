@@ -1,11 +1,25 @@
-<!DOCTYPE html>
+* {
+    font-family: 'Maven Pro', sans-serif;
+}
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
 
-</body>
-</html>
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+.header {
+
+}
+
+h1.header {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}

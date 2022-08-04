@@ -4,11 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP", "ASP\ASP.csproj", "{ADCEA201-E60A-4C24-8265-7A921FA9FD66}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A911319A-2056-4C84-AE24-FF133308DBA1} = {A911319A-2056-4C84-AE24-FF133308DBA1}
-	EndProjectSection
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vue", "vue\vue.esproj", "{A911319A-2056-4C84-AE24-FF133308DBA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ADCEA201-E60A-4C24-8265-7A921FA9FD66} = {ADCEA201-E60A-4C24-8265-7A921FA9FD66}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
