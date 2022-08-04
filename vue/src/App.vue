@@ -1,15 +1,20 @@
 <script>
-    import HelloWorld from './components/Home.vue'
+    import Index from './components/IndexPage.vue';
+    import HeaderComponent from './components/HeaderComponent.vue';
+    import FooterComponent from './components/FooterComponent.vue';
 
     export default {
         name: 'App',
         components: {
-            HelloWorld
+            Index,
+            HeaderComponent,
+            FooterComponent
         }
     }
 </script>
 
 <template>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HeaderComponent />
+    <Index />
+    <FooterComponent />
 </template>
