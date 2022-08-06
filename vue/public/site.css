@@ -2,24 +2,26 @@
     font-family: 'Maven Pro', sans-serif;
 }
 
+html {
+  font-size: 14px;
+}
+
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 html {
-    font-size: 14px;
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
-.header {
-
+body {
+  margin-bottom: 60px;
 }
 
-h1.header {
-    padding: 20px;
-    margin: auto;
-    text-align: center;
+.dropdown {
+    padding-left: -10.5px;
+    padding-right: -10.5px;
 }

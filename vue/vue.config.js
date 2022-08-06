@@ -24,7 +24,13 @@ module.exports = {
             cert: fs.readFileSync(certFilePath),
         },
         //proxy: {
-        //    '^/weatherforecast': {
+        //    '^/languagemodel': {
+        //        target: 'https://localhost:5001/'
+        //    },
+        //    '^/tts': {
+        //        target: 'https://localhost:5001/'
+        //    },
+        //    '^/submit': {
         //        target: 'https://localhost:5001/'
         //    }
         //},
