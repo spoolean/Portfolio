@@ -23,17 +23,12 @@ module.exports = {
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
         },
-        //proxy: {
-        //    '^/languagemodel': {
-        //        target: 'https://localhost:5001/'
-        //    },
-        //    '^/tts': {
-        //        target: 'https://localhost:5001/'
-        //    },
-        //    '^/submit': {
-        //        target: 'https://localhost:5001/'
-        //    }
-        //},
+        proxy: {
+            '^/projects': {
+                target: 'https://localhost:5001/'
+            }
+        },
+        
         port: 5002
     }
 }

@@ -1,7 +1,7 @@
-{
-  "projects": {
-    "project1": {
+[
+    {
       "name": "project1",
+      "id": "project1",
       "description": "project1 description",
       "url": "http://project1.com",
       "image": "http://project1.com/image.png",
@@ -23,8 +23,9 @@
       "order": 1,
       "content": "project1 content"
     },
-    "project2": {
+    {
       "name": "project2",
+      "id": "project2",
       "description": "project2 description",
       "url": "http://project2.com",
       "image": "http://project2.com/image.png",
@@ -46,5 +47,5 @@
       "order": 2,
       "content": "project2 content"
     }
-  }
-}
+]
+

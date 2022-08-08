@@ -1,4 +1,4 @@
-import Projects from './ProjectsCard.vue'
+import Projects from './ProjectsCard.js'
 import Carousel from './ProjectsCarousel.vue'
 
 export default {
@@ -32,16 +32,18 @@ export default {
     },
     methods: {
         fetchData() {
-            this.post = null;
+            this.projects = null;
             this.loading = true;
 
-            fetch('weatherforecast')
-                .then(r => r.json())
-                .then(json => {
-                    this.post = json;
-                    this.loading = false;
-                    return;
-                });
+            fetch(`${window.location.origin}/projects`)
+                .then(r => {
+                    if (!r.ok) {
+                        throw new Error(r.statusText);
+                    }
+                    return r.json();
+                }).then(data => { this.projects = data; })
+                .catch(error => { console.log(error); })
+                
         }
     },
     render() {
@@ -49,7 +51,7 @@ export default {
             <div class="container">
                 <h1>About</h1>
                 <h1>Projects</h1>
-                {this.widthSmall ? <Carousel /> : <Projects />}
+                {this.widthSmall ? <Carousel /> : <Projects projects={ this.projects} />}
             </div>
         );
     }

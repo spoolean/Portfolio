@@ -18,11 +18,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Micro APIs 
-// Endpoint to return projects.json
-app.MapGet("/Projects", () => {
-    return File.ReadAllText($"{Directory.GetCurrentDirectory()}/Files/projects.json");
-});
+//// Micro APIs 
+//// Endpoint to return projects.json
+//app.MapGet("/Projects", () =>
+//{
+//    return File.ReadAllText($"{Directory.GetCurrentDirectory()}/Files/projects.json");
+//});
 
 // Front end Configurations
 app.UseHttpsRedirection();
