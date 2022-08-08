@@ -1,7 +1,14 @@
 {
-  "information": {
-    "Email": "jamieroche@outlook.com",
-    "Linkedin": "https://www.linkedin.com/in/tylerroche/",
-    "Github": "https://github.com/spoolean"
-  }
+  "Email": "jamieroche@outlook.com",
+  "Linkedin": "https://www.linkedin.com/in/tylerroche/",
+  "Github": "https://github.com/spoolean",
+  "About": "I am a full stack web developer with a passion for creating beautiful, responsive websites and applications. I have a background in computer science and a passion for creating clean, elegant, and intuitive user interfaces. I am currently looking for a position in the web development industry.",
+  "Skills": [
+    "ASP.Net MVC",
+    "JS",
+    "HTML",
+    "CSS",
+    "VUE.js",
+    "XUnit"
+  ]
 }

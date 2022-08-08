@@ -1,4 +1,5 @@
 export default {
+    name: "Cards",
     props: {
         projects: {
             type: Array,
@@ -9,14 +10,14 @@ export default {
         return(
             <div>
                 {
-                    this.projects.map((project) => {
+                    this.projects != null && this.projects.map((project) => {
                         if (project != null) {
                             return (
                                 <b-card
-                                    title={project.name}
-                                >
-                                    <b-card-text>{project.description}</b-card-text>
-                                </b-card>
+                            title={project.name}
+                        >
+                            <b-card-text>{ project.description }</b-card-text>
+                        </b-card>
                             );
                         }
                     })

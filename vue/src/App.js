@@ -6,12 +6,33 @@ export default {
     components: {
         Header,
     },
-    methods: {},
+    data() {
+        return {
+            information: null,
+        };
+    },
+    methods: {
+        fetchInformation() {
+            this.information = null;
+
+            fetch(`${window.location.origin}/information`)
+                .then(r => {
+                    if (!r.ok) {
+                        throw new Error(r.statusText);
+                    }
+                    return r.json();
+                }).then(data => { console.log(data); this.information = data; })
+                .catch(error => { console.log(error); })
+        }
+    },
+    created() {
+        this.fetchInformation();
+    },
     computed: {},
     render() {
         return (
             <div>
-                <Header />
+                <Header information={ this.information }/>
                 <Index />
                 {/* This is the pages navigation bar so users can move about the application*/}
                 {/*<BRow class="justify-content-around m-1 text-center">*/}

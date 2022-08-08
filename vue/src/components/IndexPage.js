@@ -2,16 +2,20 @@ import Projects from './ProjectsCard.js'
 import Carousel from './ProjectsCarousel.vue'
 
 export default {
+    name: "Index",
     components: {
         Projects,
         Carousel,
+    },
+    props: {
+        information: null,
     },
     data() {
         return {
             width: document.documentElement.clientWidth,
             widthSmall : false,
             loading: false,
-            projects: null
+            projects: null,
         };
     },
     created() {
@@ -22,12 +26,7 @@ export default {
     },
     watch: {
         width() {
-            if (this.width <= 579) {
-                this.widthSmall = true;
-            }
-            else {
-                this.widthSmall = false;
-            }
+            this.widthSmall = this.width <= 579 ? true : false;
         }
     },
     methods: {

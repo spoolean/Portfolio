@@ -14,7 +14,23 @@ namespace ASP.Controllers
 
             try
             {
-                Console.WriteLine(json);
+                return json;
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+        }
+        [Route("/information")]
+        [HttpGet]
+        public string GetInformation()
+        {
+            string File = $"{Directory.GetCurrentDirectory()}/Files/information.json";
+
+            string json = System.IO.File.ReadAllText(File);
+
+            try
+            {
                 return json;
             }
             catch (Exception e)

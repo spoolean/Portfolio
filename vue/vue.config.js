@@ -26,6 +26,9 @@ module.exports = {
         proxy: {
             '^/projects': {
                 target: 'https://localhost:5001/'
+            },
+            '^/information': {
+                target: 'https://localhost:5001/'
             }
         },
         
