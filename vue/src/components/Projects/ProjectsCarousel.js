@@ -3,13 +3,15 @@ import Card from "./Card";
 
 export default {
   name: "Carousel",
-  props: {
-    projects: null,
-  },
   data() {
     return {
       currentIndex: 0,
     };
+  },
+  computed: {
+    projects() {
+      return this.$store.state.projects;
+    },
   },
   methods: {
     left() {

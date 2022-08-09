@@ -1,9 +1,9 @@
-import { BCol, BRow } from "bootstrap-vue";
-
 export default {
   name: "Header",
-  props: {
-    information: null,
+  computed: {
+    information() {
+      return this.$store.state.information;
+    },
   },
   render() {
     return (

@@ -7,39 +7,18 @@ export default {
     Header,
   },
   data() {
-    return {
-      information: null,
-    };
-  },
-  methods: {
-    fetchInformation() {
-      this.information = null;
-
-      fetch(`${window.location.origin}/information`)
-        .then((r) => {
-          if (!r.ok) {
-            throw new Error(r.statusText);
-          }
-          return r.json();
-        })
-        .then((data) => {
-          console.log(data);
-          this.information = data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+    return {};
   },
   created() {
-    this.fetchInformation();
+    this.$store.dispatch("fetchInformation");
   },
+  methods: {},
   computed: {},
   render() {
     return (
       <div>
-        <Header information={this.information} />
-        <Index information={this.information} />
+        <Header />
+        <Index />
         {/* This is the pages navigation bar so users can move about the application*/}
         {/*<BRow class="justify-content-around m-1 text-center">*/}
         {/*    <BCol class="col-sm-2"><BRow><BButton on-click={() => { this.$store.dispatch("backward"); }}><BIcon icon="arrow-left"></BIcon></BButton></BRow></BCol>*/}

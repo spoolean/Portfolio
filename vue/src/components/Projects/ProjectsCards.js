@@ -1,31 +1,41 @@
+import { BRow } from "bootstrap-vue";
 import Card from "./Card";
 
 export default {
   name: "Cards",
-  props: {
-    projects: {
-      type: Array,
-      default: [],
-    },
-  },
   data() {
     return {
-      currentIndex: 0,
+      currentIndex: 1,
     };
+  },
+  computed: {
+    projects() {
+      return this.$store.state.projects;
+    },
   },
   render() {
     return (
       <div>
-        {this.projects != null &&
-          this.projects.map((project) => {
-            if (project != null) {
-              this.currentIndex++;
-              return <Card project={project} />;
-            }
-            if (this.currentIndex % 3 == 0) {
-              return <br />;
-            }
-          })}
+        <BRow>
+          {this.projects != null &&
+            this.projects.map((project) => {
+              if (project != null) {
+                this.currentIndex++;
+                return (
+                  <BCol>
+                    <Card
+                      project={project}
+                      on-openModal={this.$emit("openModal")}
+                    />
+                  </BCol>
+                );
+              }
+              if (this.currentIndex % 3 === 0) {
+                alert("3");
+                return <BRow />;
+              }
+            })}
+        </BRow>
       </div>
     );
   },
