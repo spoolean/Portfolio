@@ -1,6 +1,7 @@
 export default {
   name: "Store",
   state: {
+    error: [],
     information: null,
     projects: null,
     showModal: false,
@@ -20,6 +21,9 @@ export default {
       state.showModal = true;
       state.modalProject = modalProject;
     },
+    setError(state, error) {
+      state.error.push(error);
+    },
   },
   actions: {
     async fetchInformation({ commit }) {
@@ -30,7 +34,7 @@ export default {
       fetch(`${window.location.origin}/projects`)
         .then((r) => {
           if (!r.ok) {
-            throw new Error(r.statusText);
+            throw new Error(r);
           }
           return r.json();
         })
@@ -38,13 +42,13 @@ export default {
           commit("setProjects", data);
         })
         .catch((error) => {
-          console.log(error);
+          commit("setError", error);
         });
 
       fetch(`${window.location.origin}/information`)
         .then((r) => {
           if (!r.ok) {
-            throw new Error(r.statusText);
+            throw new Error(r);
           }
           return r.json();
         })
@@ -52,7 +56,7 @@ export default {
           commit("setInformation", data);
         })
         .catch((error) => {
-          console.log(error);
+          commit("setError", error);
         });
     },
     openModal({ commit }, project) {
