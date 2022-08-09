@@ -1,3 +1,5 @@
+import { BButton, BCol, BContainer, BLink, BRow } from "bootstrap-vue";
+
 export default {
   name: "Header",
   computed: {
@@ -7,24 +9,20 @@ export default {
   },
   render() {
     return (
-      <BRow>
-        <BCol cols="4" order="2">
-          <h1>James Roche</h1>
-        </BCol>
-        <BCol cols="4" order="1">
-          {this.information.Email}
-        </BCol>
-        <BCol cols="2" order="3">
-          <a
-            target="_blank"
-            class="fa-brands fa-linkedin"
-            href={this.information.Linkedin}
-          ></a>
-        </BCol>
-        <BCol cols="2" order="4">
-          {this.information.Github}
-        </BCol>
-      </BRow>
+      <div class="navbar">
+        <p class="h1 navbar-title">James Roche</p>
+        <div class="navbar-links">
+          <BLink href={"emailTo:" + this.information.email}>
+            <i class="fa-solid fa-at fa-2xl"></i>
+          </BLink>
+          <BLink href={this.information.Linkedin} target="_blank">
+            <i class="fa-brands fa-linkedin fa-2xl"></i>
+          </BLink>
+          <BLink href={this.information.Github} target="_blank">
+            <i class="fa-brands fa-github fa-2xl"></i>
+          </BLink>
+        </div>
+      </div>
     );
   },
 };

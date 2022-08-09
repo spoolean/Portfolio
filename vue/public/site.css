@@ -1,27 +1,40 @@
 * {
     font-family: 'Maven Pro', sans-serif;
+    
 }
 
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
     font-size: 16px;
-  }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+@media (max-width: 768px) {
+
 }
 
-body {
-  margin-bottom: 60px;
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+    .navbar-title {
+        margin: 0;
+    }
 }
 
-.dropdown {
-    padding-left: -10.5px;
-    padding-right: -10.5px;
+.navbar{
+    background-color: aliceblue;
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-title {
+    margin-left: 20px;
+}
+
+.navbar-links {
+    position: fixed;
+    right: 0;
+    margin-right: 10px;
+    justify-content: space-between;
 }

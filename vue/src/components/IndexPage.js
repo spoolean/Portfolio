@@ -41,9 +41,9 @@ export default {
   render() {
     return (
       <div class="container">
-        <h1>About</h1>
+        <h2>About</h2>
         <p>{this.information.About}</p>
-        <h1>Projects</h1>
+        <h2>Projects</h2>
         {this.widthSmall ? <Carousel /> : <Projects />}
         {this.$store.state.showModal && (
           <Modal project={this.$store.state.modalProject} />
